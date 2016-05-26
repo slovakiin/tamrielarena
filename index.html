@@ -8,8 +8,10 @@
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 	<style>
 		#map { 
-			width: 100%;
-			height: 100%;
+			width: 1023px;
+			height: 767px;
+			margin-left: auto;
+			margin-right: auto;
 			}
 	</style>
 </head>
@@ -19,8 +21,8 @@
 	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
     <script>
-        var map = L.map('map').setView([0, 0], 2);
-        L.tileLayer('tiles/tile_{z}_{x}-{y}.png', {
+        var map = L.map('map').setView([0, 0], 1);
+        L.tileLayer('output/tile_{z}_{x}-{y}.png', {
             minZoom: 1,
             maxZoom: 5,
             attribution: 'NirnPowers Map by tofukiin',
