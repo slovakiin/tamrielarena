@@ -8,10 +8,11 @@
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 	<style>
 		#map { 
-			width: 1023px;
-			height: 767px;
+			width: 100%;
+			height: 100%;
 			margin-left: auto;
 			margin-right: auto;
+			background-color: #74AADB;
 			}
 	</style>
 </head>
@@ -21,16 +22,51 @@
 	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
     <script>
-        var map = L.map('map').setView([0, 0], 2);
+        var map = L.map('map').setView([50.85, -8.04], 3);
         L.tileLayer('output/tile_{z}_{x}-{y}.png', {
             minZoom: 1,
             maxZoom: 5,
             attribution: 'NirnPowers Map by tofukiin',
             tms: false,
 			noWrap: true,
-			crs: L.CRS.Simple,
         }).addTo(map);
-		var bounds = [[0,0],[8192,8192]];
+		
+				/*This function gives you Lat Long of what you click on */
+		var popup = L.popup();
+
+		function onMapClick(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent("You clicked the map at " + e.latlng.toString())
+				.openOn(map);
+		};
+
+		map.on('click', onMapClick);
+		
+		/*Custom Icons*/
+		var npIcon = L.Icon.extend({
+			options: {
+				iconSize: [52, 52],
+				iconAnchor: [26, 52],
+				popupAnchor: [0, -52],
+			}
+		});
+		var alinor = new npIcon({iconUrl: 'icons/alinor2.png'}),
+			aka = new npIcon({iconUrl: 'icons/akaviri.png'})
+			imperial = new npIcon({iconUrl: 'icons/imperialcity.png'})
+			ind = new npIcon({iconUrl: 'icons/tribe.png'})
+		;
+		
+		/*Marker Placements*/
+		L.marker([11.1, -83.3], {icon: alinor}).bindPopup('Auridon').addTo(map);
+		L.marker([-7.0, -112.4], {icon: alinor}).bindPopup('Alinor').addTo(map);
+		L.marker([15.2, -101.7], {icon: alinor}).bindPopup('Cloudrest').addTo(map);
+		L.marker([-11.7, -89.6], {icon: alinor}).bindPopup('Dusk').addTo(map);
+		L.marker([51.6, -8.9], {icon: imperial}).bindPopup('The White Gold City').addTo(map);
+		L.marker([23.5, -168.9], {icon: ind}).bindPopup('Sinistral Mer').addTo(map);
+		L.marker([50.4, -163.4], {icon: ind}).bindPopup('No-Totambu').addTo(map);
+		L.marker([34.5, -146.9], {icon: ind}).bindPopup('Coral Kingdom (Sloads)').addTo(map);
+		L.marker([31.4, -110.6], {icon: ind}).bindPopup('Eyevea').addTo(map);
     </script>
 </body>
 </html>
