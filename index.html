@@ -53,8 +53,10 @@
 		});
 		var alinor = new npIcon({iconUrl: 'icons/alinor2.png'}),
 			aka = new npIcon({iconUrl: 'icons/akaviri.png'})
+			hammerfell = new npIcon ({iconUrl: 'icons/hammerfell.png'})
 			imperial = new npIcon({iconUrl: 'icons/imperialcity.png'})
 			ind = new npIcon({iconUrl: 'icons/tribe.png'})
+			sorc = new npIcon({iconUrl: 'icons/sorcerers.png'})
 		;
 		
 		/*Marker Placements*/
@@ -62,11 +64,16 @@
 		L.marker([-7.0, -112.4], {icon: alinor}).bindPopup('Alinor').addTo(map);
 		L.marker([15.2, -101.7], {icon: alinor}).bindPopup('Cloudrest').addTo(map);
 		L.marker([-11.7, -89.6], {icon: alinor}).bindPopup('Dusk').addTo(map);
+		L.marker([39.9, -120.8], {icon: hammerfell}).bindPopup('The Isles (Stros M\'Kai)').addTo(map);
+		L.marker([41.2, -99.4], {icon: hammerfell}).bindPopup('Stros M\'Kai').addTo(map);
+		L.marker([51.4, -76.8], {icon: hammerfell}).bindPopup('Hegathe').addTo(map);
+		L.marker([51.2, -54.4], {icon: hammerfell}).bindPopup('Rihad').addTo(map);
+		L.marker([62.7, -43.4], {icon: hammerfell}).bindPopup('Elinhir').addTo(map);
 		L.marker([51.6, -8.9], {icon: imperial}).bindPopup('The White Gold City').addTo(map);
 		L.marker([23.5, -168.9], {icon: ind}).bindPopup('Sinistral Mer').addTo(map);
 		L.marker([50.4, -163.4], {icon: ind}).bindPopup('No-Totambu').addTo(map);
-		L.marker([34.5, -146.9], {icon: ind}).bindPopup('Coral Kingdom (Sloads)').addTo(map);
-		L.marker([31.4, -110.6], {icon: ind}).bindPopup('Eyevea').addTo(map);
+		L.marker([34.5, -146.9], {icon: sorc}).bindPopup('Coral Kingdom (Sloads)').addTo(map);
+		L.marker([31.4, -110.6], {icon: sorc}).bindPopup('Eyevea').addTo(map);
     </script>
 </body>
 </html>
