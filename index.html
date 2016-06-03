@@ -52,7 +52,7 @@
 				popupAnchor: [0, -26],
 			}
 		});
-		var alinor = new npIcon({iconUrl: 'icons/alinor2.png'}),
+		var alinor = new npIcon({iconUrl: 'icons/alinor2.png'})
 			aka = new npIcon({iconUrl: 'icons/akaviri.png'})
 			hammerfell = new npIcon ({iconUrl: 'icons/hammerfell.png'})
 			imperial = new npIcon({iconUrl: 'icons/imperialcity.png'})
@@ -64,7 +64,29 @@
 			niben = new npIcon({iconUrl: 'icons/nibenay.png'})
 			colovia = new npIcon({iconUrl: 'icons/colovia.png'})
 			ayleid = new npIcon({iconUrl: 'icons/ayleid.png'})
+			falinesti = new npIcon({iconUrl: 'icons/falinesti.png'})
+			boiche = new npIcon({iconUrl: 'icons/boiche.png'})
 		;
+		
+		/*List of Markers*/
+		/* reference http://harrywood.co.uk/maps/examples/leaflet/marker-array.view.html */
+		var markers = [
+			//[Lat, Long, icon, 'popup']
+			[16.1, -47.9, falinesti, "Summer Falinesti"],
+			[27.4, -42.9, boiche, "Arenthia"]
+		]
+		
+         //Loop through the markers array
+         for (var i=0; i<markers.length; i++) {
+           
+            var lat = markers[i][0];
+            var lon = markers[i][1];
+			var icn = markers[i][2];
+            var popupText = markers[i][3];
+            
+             var marker = new L.Marker([lat, lon], {icon: icn}).bindPopup(popupText).addTo(map);
+         
+         }
 		
 		/*Marker Placements*/
 		
