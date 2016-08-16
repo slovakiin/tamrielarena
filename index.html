@@ -86,15 +86,15 @@
 		/* reference http://harrywood.co.uk/maps/examples/leaflet/marker-array.view.html */
 		var markers = [
 			//[Lat, Long, icon, 'popup']
-			[16.1, -47.9, falinesti, "Summer Falinesti (The Wild Empire)"],
+			[16.1, -47.9, falinesti, "Summer Falinesti (The Wild Empire*)"],
 			[27.4, -42.9, boiche, "Arenthia"],
 			[3.6, -63.6, boiche, "Wilder Court (The Wild Empire)"],
 			[4.5, -37.7, boiche, "Valenwood"],
-			[-10.0, -33.1, falinesti, "Winter Falinesti (The Wild Empire)"],
+			[-10.0, -33.1, falinesti, "Winter Falinesti (The Wild Empire*)"],
 			[24.3, -22.8, elsweyr, "Anequina (Elsweyr Confederacy)"],
-			[-0.7, -12.6, elsweyr, "Pelletine (Elsweyr Confederacy)"],
+			[-0.7, -12.6, elsweyr, "Pelletine (Elsweyr Confederacy*)"],
 			[-20.2, -18.5, elsweyr, "Khenarthi\'s Roost (Leyawiin)"],
-			[10.0, 5.9, elsweyr, "Leyawiin (Elsweyr Confederacy)"],
+			[10.0, 5.9, elsweyr, "Leyawiin"],
 			[72.8, -49.4, reach, "The Reach"],
 			[-42.5, -56.4, maormer, "Pyandonea"],
 			[71.6, 139.9, akaviri, "Tsaesci (NPC)"],
@@ -110,10 +110,10 @@
 			[26.7, 54.6, argonia, "Sovereign Agaceph"],
 			[13.2, 57.5, argonia, "Archein (Patan)"],
 			[5.8, 50.3, argonia, "Agaceph (Patan)"],
-			[-10.1, 51.3, lilmoth, "Lilmothiit (Patan)"],
+			[-10.1, 51.3, lilmoth, "Lilmothiit (Patan*)"],
 			[38.1, 54.8, morrowind, "Dres (Resdayn)"],
 			[47.7, 46.4, morrowind, "Hlaalu (Resdayn)"],
-			[56.9, 59.7, morrowind, "Indoril (Resdayn)"],
+			[56.9, 59.7, morrowind, "Indoril (Resdayn*)"],
 			[70.9, 67.1, morrowind, "Telvanni (Resdayn)"],
 			[72.4, 18.3, morrowind, "Redoran (Resdayn)"],
 			[60.7, 23.5, morrowind, "Sadras (Resdayn)"],
@@ -148,32 +148,32 @@
 		/*Marker Placements*/
 		
 		L.marker([12.7, -83.6], {icon: alinor}).bindPopup('Auridon (Summerset Isles)').addTo(map);
-		L.marker([-5.9, -105.9], {icon: alinor}).bindPopup('Alinor (Summerset Isles)').addTo(map);
+		L.marker([-5.9, -105.9], {icon: alinor}).bindPopup('Alinor (Summerset Isles*)').addTo(map);
 		L.marker([15.2, -101.7], {icon: alinor}).bindPopup('Cloudrest (Summerset Isles)').addTo(map);
 		L.marker([-7.2, -91.8], {icon: alinor}).bindPopup('Dusk (Summerset Isles)').addTo(map);
 		
 		L.marker([41.7, -119.3], {icon: hammerfell}).bindPopup('The Isles (Stros M\'Kai)').addTo(map);
 		L.marker([41.2, -99.4], {icon: hammerfell}).bindPopup('Stros M\'Kai').addTo(map);
 		
-		L.marker([52.6, -60.2], {icon: hammerfell}).bindPopup('Rihad').addTo(map);
+		L.marker([52.6, -60.2], {icon: hammerfell}).bindPopup('Rihad (Kingdom of Hammerfell)').addTo(map);
 		L.marker([62.7, -43.4], {icon: hammerfell}).bindPopup('Elinhir').addTo(map);
 		
-		L.marker([50.0, -3.6], {icon: imperial}).bindPopup('The White Gold City (Cyrodiilic Empire)').addTo(map);
+		L.marker([50.0, -3.6], {icon: imperial}).bindPopup('The White Gold City (Cyrodiilic Empire*)').addTo(map);
 		
-		L.marker([23.5, -168.9], {icon: ind}).bindPopup('*Sinistral Mer*').addTo(map);
+		L.marker([23.5, -168.9], {icon: ind}).bindPopup('Sinistral Mer').addTo(map);
 		L.marker([50.4, -163.4], {icon: ind}).bindPopup('No-Totambu').addTo(map);
 		
 		L.marker([34.5, -146.9], {icon: sorc}).bindPopup('Coral Kingdom (Sloads)').addTo(map);
 		L.marker([31.4, -110.6], {icon: sorc}).bindPopup('Eyevea').addTo(map);
 		
 		L.marker([61.3, -92.4], {icon: hammerfell}).bindPopup('Sentinel').addTo(map);
-		L.marker([54.8, -91.9], {icon: hammerfell}).bindPopup('Hegathe').addTo(map);
+		L.marker([53.6, -102.6], {icon: hammerfell}).bindPopup('Hegathe (Kingdom of Hammerfell*)').addTo(map);
 		L.marker([60.8, -63.5], {icon: hammerfell}).bindPopup('Mournoth').addTo(map);
 		L.marker([66.2, -74.1], {icon: hammerfell}).bindPopup('Hallin\'s Stand').addTo(map);
 		L.marker([66.7, -57.4], {icon: hammerfell}).bindPopup('Dragonstar').addTo(map);
 		
 		L.marker([59.2, -117.6], {icon: orcs}).bindPopup('Betnikh (Seamount Clan)').addTo(map);
-		L.marker([75.5, -63.3], {icon: orcs}).bindPopup('Wrothgar (Nova Orsinium)').addTo(map);
+		L.marker([75.5, -63.3], {icon: orcs}).bindPopup('Wrothgar (Nova Orsinium*)').addTo(map);
 		
 		L.marker([63.8, -115.0], {icon: breton}).bindPopup('Daggerfall').addTo(map);
 		L.marker([70.2, -111.7], {icon: breton}).bindPopup('Camlorn').addTo(map);
