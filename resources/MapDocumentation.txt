@@ -3,6 +3,7 @@ The map is not a single picture.
 It is made up of two layers: map tiles, and markers.
 The javascript program (API) used to create the map is called Leaflet
 leafletjs.com
+The use of tiles keeps load speeds down, while allowing it to be zoomed to a high level.
 See more about tiles here: http://blog.mikecouturier.com/2011/07/create-zoomable-images-using-google.
 (Note the author uses a different API, but the tiling concept is the same.)
 
