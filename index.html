@@ -5,7 +5,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
 	
 	<style>
 		#map { 
@@ -20,19 +20,43 @@
 <body>
     <div id="map"></div>
  
-	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
 
     <script>
-        var map = L.map('map').setView([50.85, -8.04], 2);
-        L.tileLayer('output/tile_{z}_{x}-{y}.png', {
-            minZoom: 1,
-            maxZoom: 5,
-            attribution: 'NirnPowers Map by tofukiin',
-            tms: false,
+	
+		/* TILE LAYERS */
+		var nations = L.tileLayer('output/tile_{z}_{x}-{y}.png', {
+			minZoom: 1,
+			maxZoom: 5,
+			attribution: 'NirnPowers Map by tofukiin',
+			tms: false,
 			noWrap: true,
-        }).addTo(map);
+        });
 		
-				/*This function gives you Lat Long of what you click on */
+		var claims = L.tileLayer('output2/tile_{z}_{x}-{y}.png', {
+			minZoom: 1,
+			maxZoom: 5,
+			attribution: 'Claims Map by bold0727',
+			tms: false,
+			noWrap: true,
+        });
+		
+		var baseMaps = {
+			"Nations": nations,
+			"Claims": claims
+		};
+	
+		/* MAP */
+		var map = L.map('map', {
+			center: [50.85, -8.04],
+			zoom: 2,
+			layers: [nations]
+		});
+	
+		/* This adds a layer control to the top right */
+		L.control.layers(baseMaps).addTo(map);
+		
+		/*This function gives you Lat Long of what you click on */
 		var popup = L.popup();
 
 		function onMapClick(e) {
