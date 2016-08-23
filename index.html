@@ -15,6 +15,18 @@
 			margin-right: auto;
 			background-color: #74AADB;
 			}
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
 	</style>
 </head>
 <body>
@@ -55,6 +67,22 @@
 	
 		/* This adds a layer control to the top right */
 		L.control.layers(baseMaps).addTo(map);
+		
+		var info = L.control();
+
+		info.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+			this.populate();
+			return this._div;
+		};
+
+		// method that we will use to update the control based on feature properties passed
+		info.populate = function () {
+			this._div.innerHTML = '<h4>Claims Map</h4><b>Red </b>Claimed<br /><b>Cyan </b>Unclaimed<br />'
+		};
+
+		info.setPosition('bottomright').addTo(map);
+
 		
 		/*This function gives you Lat Long of what you click on */
 		var popup = L.popup();
