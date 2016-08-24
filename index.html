@@ -78,7 +78,7 @@
 
 		// method that we will use to update the control based on feature properties passed
 		info.populate = function () {
-			this._div.innerHTML = '<h4>Claims Map</h4><b>Red </b>Claimed<br /><b>Cyan </b>Unclaimed<br />'
+			this._div.innerHTML = '<h4>Claims Map</h4><b>Red, Orange, Yellow </b>Claimed<br /><b>Blue, Green, Purple </b>Unclaimed<br /><b>Grey </b>NPC<br />'
 		};
 
 		info.setPosition('bottomright').addTo(map);
@@ -132,6 +132,7 @@
 			morrowind = new npIcon({iconUrl: 'icons/resdayn.png'})
 			dragon = new npIcon({iconUrl: 'icons/EbonPact.png'})
 			velothi = new npIcon({iconUrl: 'icons/DAzura.png'})
+			dwemer = new npIcon({iconUrl:'icons/DJyg.png'})
 		;
 		
 		/*List of Markers*/
@@ -242,9 +243,10 @@
 		L.marker([76.9, -35.7], {icon: skyrim}).bindPopup('Hjaalmarch').addTo(map);
 		L.marker([77.2, -4.2], {icon: skyrim}).bindPopup('Winterhold').addTo(map);
 		L.marker([73.6, -1.1], {icon: skyrim}).bindPopup('Eastmarch').addTo(map);
-		L.marker([67.4, -1.4], {icon: skyrim}).bindPopup('The Rift').addTo(map);
+		L.marker([66.5, 6], {icon: skyrim}).bindPopup('The Rift').addTo(map);
 		L.marker([73.5, -26.8], {icon: skyrim}).bindPopup('Whiterun').addTo(map);
 		L.marker([68.3, -28.3], {icon: skyrim}).bindPopup('Falkreath').addTo(map);
+		L.marker([67, -1.4], {icon: dwemer}).bindPopup('Avanchnzel').addTo(map);
 		
 		L.marker([61.7, -7.0], {icon:niben}).bindPopup('Bruma (Cyrodiilic Empire)').addTo(map);
 		L.marker([51.9, 14.4,], {icon:niben}).bindPopup('Cheydinhal (Cyrodiilic Empire)').addTo(map);
