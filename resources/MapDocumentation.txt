@@ -1,14 +1,23 @@
-Photo
-Recommend using GIMP
-Select by color
-Make no two colors exactly the same to make it easier to select by color
-Keep it square
+Overview
+The map is not a single picture.
+It is made up of two layers: map tiles, and markers.
+The javascript program (API) used to create the map is called Leaflet
+leafletjs.com
+The use of tiles keeps load speeds down, while allowing it to be zoomed to a high level.
+See more about tiles here: http://blog.mikecouturier.com/2011/07/create-zoomable-images-using-google.
+(Note the author uses a different API, but the tiling concept is the same.)
 
-Web Page
+Map Photo
+We use a PSD file...
+Editable using GIMP
+To change nation colors easily, select by color
+Make no two colors exactly the same to make it easier to select by color
+Make sure to keep the photo square
+
+Generating Tiles
 http://blog.mikecouturier.com/2011/07/create-zoomable-images-using-google.html
-Shift+RightClick and select ¡°Open Command Window Here¡± to call command prompt
+Shift+RightClick and select Â¡Â°Open Command Window HereÂ¡Â± to call command prompt
 Command you type in should look like TilesGenerator.exe 5 EmpireMap0.png
 	Will take a few minutes to generate tiles
 
-API
-leafletjs.com
+
