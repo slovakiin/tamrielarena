@@ -1,0 +1,259 @@
+<html>
+<head>
+	<title>NirnPowers Map</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+	
+	<style>
+		#map { 
+			width: 100%;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			background-color: #74AADB;
+			}
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+	</style>
+</head>
+<body>
+    <div id="map"></div>
+ 
+	<script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+    <script>
+	
+		/* TILE LAYERS */
+		var nations = L.tileLayer('output/tile_{z}_{x}-{y}.png', {
+			minZoom: 1,
+			maxZoom: 5,
+			attribution: 'NirnPowers Map by tofukiin',
+			tms: false,
+			noWrap: true,
+        });
+		
+		var claims = L.tileLayer('output2/tile_{z}_{x}-{y}.png', {
+			minZoom: 1,
+			maxZoom: 5,
+			attribution: 'Claims Map by bold0727',
+			tms: false,
+			noWrap: true,
+        });
+		
+		var baseMaps = {
+			"Nations": nations,
+			"Claims": claims
+		};
+	
+		/* MAP */
+		var map = L.map('map', {
+			center: [50.85, -8.04],
+			zoom: 2,
+			layers: [nations]
+		});
+	
+		/* This adds a layer control to the top right */
+		L.control.layers(baseMaps).addTo(map);
+		
+		var info = L.control();
+
+		info.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+			this.populate();
+			return this._div;
+		};
+
+		// method that we will use to update the control based on feature properties passed
+		info.populate = function () {
+			this._div.innerHTML = '<h4>Claims Map</h4><b>Beige </b>Claimed<br /><b>Grey </b>Unclaimed<br /><b>Grey (Listed As NPC) </b>Unclaimed<br />'
+		};
+
+		info.setPosition('bottomright').addTo(map);
+
+		
+		/*This function gives you Lat Long of what you click on */
+		var popup = L.popup();
+
+		function onMapClick(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent("You clicked the map at " + e.latlng.toString())
+				.openOn(map);
+		};
+
+		map.on('click', onMapClick);
+		
+		/*Custom Icons*/
+		var npIcon = L.Icon.extend({
+			options: {
+				iconSize: [40, 40],
+				iconAnchor: [20, 20],
+				popupAnchor: [0, -20],
+			}
+		});
+		
+		var akaviri = L.icon({
+			iconUrl: 'icons/akaviri.png',
+			iconSize: [28, 52],
+			popupAnchor: [0, -26]
+		});
+		
+		var alinor = new npIcon({iconUrl: 'icons/alinor2.png'})
+			hammerfell = new npIcon ({iconUrl: 'icons/hammerfell.png'})
+			imperial = new npIcon({iconUrl: 'icons/imperialcity.png'})
+			ind = new npIcon({iconUrl: 'icons/tribe.png'})
+			sorc = new npIcon({iconUrl: 'icons/sorcerers.png'})
+			orcs = new npIcon({iconUrl: 'icons/orcs.png'})
+			breton = new npIcon({iconUrl: 'icons/breton2.png'})
+			skyrim = new npIcon({iconUrl: 'icons/bear.png'})
+			niben = new npIcon({iconUrl: 'icons/nibenay.png'})
+			colovia = new npIcon({iconUrl: 'icons/colovia.png'})
+			ayleid = new npIcon({iconUrl: 'icons/ayleid.png'})
+			falinesti = new npIcon({iconUrl: 'icons/falinesti.png'})
+			boiche = new npIcon({iconUrl: 'icons/boiche.png'})
+			elsweyr = new npIcon({iconUrl: 'icons/elsweyr.png'})
+			reach = new npIcon({iconUrl: 'icons/reach.png'})
+			maormer = new npIcon({iconUrl: 'icons/pirate.png'})
+			argonia = new npIcon({iconUrl: 'icons/argonia.png'})
+			lilmoth = new npIcon({iconUrl: 'icons/lilmoth.png'})
+			morrowind = new npIcon({iconUrl: 'icons/resdayn.png'})
+			dragon = new npIcon({iconUrl: 'icons/EbonPact.png'})
+			velothi = new npIcon({iconUrl: 'icons/DAzura.png'})
+			dwemer = new npIcon({iconUrl:'icons/DJyg.png'})
+		;
+		
+		/*List of Markers*/
+		/* reference http://harrywood.co.uk/maps/examples/leaflet/marker-array.view.html */
+		var markers = [
+			//[Lat, Long, icon, 'popup']
+			[16.1, -47.9, falinesti, "Summer Falinesti (The Wild Empire*)"],
+			[27.4, -42.9, boiche, "Arenthia (The Wild Empire)"],
+			[3.6, -63.6, boiche, "Wilder Court (The Wild Empire)"],
+			[4.5, -37.7, boiche, "Elden Root (The Wild Empire)"],
+			[-10.0, -33.1, falinesti, "Winter Falinesti (The Wild Empire*)"],
+			[24.3, -22.8, elsweyr, "Anequina"],
+			[-0.7, -12.6, argonia, "Pelletine (Marshland Empire)"],
+			[-20.2, -18.5, elsweyr, "Khenarthi\'s Roost (Leyawiin)"],
+			[10.0, 5.9, elsweyr, "Leyawiin (Cyrodiilic Empire)"],
+			[72.8, -49.4, reach, "The Reach"],
+			[-42.5, -56.4, maormer, "Pyandonea"],
+			[71.6, 139.9, akaviri, "Tsaesci (NPC)"],
+			[75.8, 154.3, akaviri, "Tang Mo (NPC)"],
+			[72.7, 173.8, akaviri, "Po'Tun (NPC)"],
+			[78.3, 170.5, akaviri, "Kamal (NPC)"],
+			[69.3, -94.9, alinor, "Balfiera (Aldmeri Hegemony)"],
+			[-20.0, 23.9, argonia, "Soulrest (Marshland Empire)"],
+			[-16.0, 51.2, argonia, "Lilmoth (Marshland Empire*)"],
+			[21.3, 51.7, argonia, "Helstrom (Marshland Empire)"],
+			[28.8, 38.0, argonia, "Stormhold (Marshland Empire)"],
+			[16.3, 19.8, argonia, "Murkmire (Marshland Empire)"],
+			[38.1, 58.8, argonia, "East Dres (Marshland Empire)"],
+			[41.3, 35.1, velothi, "West Dres (County Velothia)"],
+			[47.7, 46.4, morrowind, "Demilitarized Zone"],
+			[56.9, 59.7, morrowind, "Indoril (Resdayn*)"],
+			[70.9, 67.1, morrowind, "Telvanni (Resdayn)"],
+			[72.4, 18.3, morrowind, "Redoran (Resdayn)"],
+			[60.7, 23.5, morrowind, "Sadras (Resdayn)"],
+			[68.4, 36.7, morrowind, "Hlaalu (Resdayn)"],
+			[83.7, -21.1, dragon, "Atmora (NPC)"],
+			[82.6, 45.7, dragon, "Roscrea"],
+			[80.4, 24.6, ind, "Skaal (Velothia)"],
+			[80.4, 16.5, ind, "Rieklings (Velothia)"],
+			[63.3, 97.2, velothi, "Cathnoquey"],
+			[60.3, 107.4, sorc, "Yneslea"],
+			[64.4, 114.0, sorc, "Esroniet"],
+			[73.9, 39.9, velothi, "County Velothia (Cyrodiilic Empire)"],
+			[67.6, 52.4, velothi, "Erabenimsun"],
+			[-11.0, -64.0, boiche, "Wasten"]
+			
+			]
+		
+         //Loop through the markers array
+         for (var i=0; i<markers.length; i++) {
+           
+            var lat = markers[i][0];
+            var lon = markers[i][1];
+			var icn = markers[i][2];
+            var popupText = markers[i][3];
+            
+             var marker = new L.Marker([lat, lon], {icon: icn}).bindPopup(popupText).addTo(map);
+         
+         }
+		
+		/*Marker Placements*/
+		
+		L.marker([12.7, -83.6], {icon: alinor}).bindPopup('Auridon (Aldmeri Hegemony)').addTo(map);
+		L.marker([-5.9, -105.9], {icon: alinor}).bindPopup('Alinor (Aldmeri Hegemony*)').addTo(map);
+		L.marker([15.2, -101.7], {icon: alinor}).bindPopup('Cloudrest (Aldmeri Hegemony)').addTo(map);
+		L.marker([-7.2, -91.8], {icon: alinor}).bindPopup('Dusk (Aldmeri Hegemony)').addTo(map);
+		
+		L.marker([41.7, -119.3], {icon: hammerfell}).bindPopup('The Isles (Stros M\'Kai)').addTo(map);
+		L.marker([41.2, -99.4], {icon: hammerfell}).bindPopup('Stros M\'Kai').addTo(map);
+		
+		L.marker([52.6, -60.2], {icon: hammerfell}).bindPopup('Rihad (Kingdom of Hammerfell)').addTo(map);
+		L.marker([62.7, -43.4], {icon: hammerfell}).bindPopup('Elinhir').addTo(map);
+		
+		L.marker([50.0, -3.6], {icon: imperial}).bindPopup('The White Gold City (Cyrodiilic Empire*)').addTo(map);
+		
+		L.marker([23.5, -168.9], {icon: ind}).bindPopup('Sinistral Mer').addTo(map);
+		L.marker([50.4, -163.4], {icon: ind}).bindPopup('No-Totambu').addTo(map);
+		L.marker([75.0, -79.1], {icon: dwemer}).bindPopup('Ravenspring (Avanchnzel)').addTo(map);
+		L.marker([34.5, -146.9], {icon: sorc}).bindPopup('Coral Kingdom (Sloads)').addTo(map);
+		L.marker([31.4, -110.6], {icon: sorc}).bindPopup('Eyevea').addTo(map);
+		
+		L.marker([61.3, -92.4], {icon: hammerfell}).bindPopup('Sentinel').addTo(map);
+		L.marker([53.6, -102.6], {icon: hammerfell}).bindPopup('Hegathe (Kingdom of Hammerfell*)').addTo(map);
+		L.marker([60.8, -63.5], {icon: hammerfell}).bindPopup('Mournoth').addTo(map);
+		L.marker([66.2, -74.1], {icon: hammerfell}).bindPopup('Hallin\'s Stand').addTo(map);
+		L.marker([66.7, -57.4], {icon: hammerfell}).bindPopup('Dragonstar').addTo(map);
+		
+		L.marker([59.2, -117.6], {icon: breton}).bindPopup('Betony (Stormhaven)').addTo(map);
+		L.marker([75.5, -63.3], {icon: orcs}).bindPopup('Wrothgar').addTo(map);
+		
+		L.marker([63.8, -115.0], {icon: breton}).bindPopup('Daggerfall').addTo(map);
+		L.marker([70.2, -111.7], {icon: breton}).bindPopup('Camlorn (Kingdom of Alcaire)').addTo(map);
+		L.marker([72.3, -94.5], {icon: breton}).bindPopup('Alcaire (Kingdom of Alcaire*)').addTo(map);
+		L.marker([74.7, -96.3], {icon: breton}).bindPopup('Rivenspire').addTo(map);
+		L.marker([76.8, -87.2], {icon: breton}).bindPopup('Northpoint').addTo(map);
+		L.marker([70.5, -83.8], {icon: breton}).bindPopup('Stormhaven').addTo(map);
+		L.marker([73.0, -73.4], {icon: breton}).bindPopup('Evermor').addTo(map);
+		
+		L.marker([78.4, -43.9], {icon: skyrim}).bindPopup('Haafingar (Kingdom of Skyrim)').addTo(map);
+		L.marker([76.7, -18.8], {icon: skyrim}).bindPopup('The Pale (Kingdom of Skyrim)').addTo(map);
+		L.marker([76.9, -35.7], {icon: skyrim}).bindPopup('Hjaalmarch (Kingdom of Skyrim)').addTo(map);
+		L.marker([77.2, -4.2], {icon: skyrim}).bindPopup('Winterhold (Kingdom of Skyrim*)').addTo(map);
+		L.marker([73.6, -1.1], {icon: skyrim}).bindPopup('Eastmarch (Kingdom of Skyrim)').addTo(map);
+		L.marker([66.5, 6], {icon: skyrim}).bindPopup('The Rift (Kingdom of Skyrim)').addTo(map);
+		L.marker([73.5, -26.8], {icon: skyrim}).bindPopup('Whiterun (Kingdom of Skyrim)').addTo(map);
+		L.marker([68.3, -28.3], {icon: skyrim}).bindPopup('Falkreath (Kingdom of Skyrim)').addTo(map);
+		L.marker([67, -1.4], {icon: dwemer}).bindPopup('Avanchnzel').addTo(map);
+		
+		L.marker([61.7, -7.0], {icon:niben}).bindPopup('Bruma (Cyrodiilic Empire)').addTo(map);
+		L.marker([51.9, 14.4,], {icon:niben}).bindPopup('Cheydinhal (Cyrodiilic Empire)').addTo(map);
+		L.marker([37.2, 20.6], {icon:niben}).bindPopup('Bravil (Cyrodiilic Empire)').addTo(map);
+		
+		L.marker([40.1, 5.5], {icon:ayleid}).bindPopup('Nenalata (Cyrodiilic Empire)').addTo(map);
+		
+		L.marker([41.8, -17.9], {icon:colovia}).bindPopup('Skingrad (Cyrodiilic Empire)').addTo(map);
+		L.marker([57.8, -26.9], {icon:colovia}).bindPopup('Chorrol (Cyrodiilic Empire)').addTo(map);
+		L.marker([44.2, -42.6], {icon:colovia}).bindPopup('Kvatch (Cyrodiilic Empire)').addTo(map);
+		L.marker([38.4, -55.8], {icon:colovia}).bindPopup('Anvil (Cyrodiilic Empire)').addTo(map);
+		
+		L.marker([24.4, -0.4], {icon:akaviri}).bindPopup('Rimmen').addTo(map);
+	    
+    </script>
+</body>
+</html>
