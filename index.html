@@ -144,8 +144,8 @@
 			[3.6, -63.6, boiche, "Wilder Court (The Wild Empire)"],
 			[4.5, -37.7, boiche, "Elden Root (The Wild Empire)"],
 			[-10.0, -33.1, falinesti, "Winter Falinesti (The Wild Empire*)"],
-			[24.3, -22.8, elsweyr, "Anequina (Elsweyr Confederacy)"],
-			[-0.7, -12.6, elsweyr, "Pelletine (Elsweyr Confederacy*)"],
+			[24.3, -22.8, elsweyr, "Anequina"],
+			[-0.7, -12.6, argonia, "Pelletine (Marshland Empire)"],
 			[-20.2, -18.5, elsweyr, "Khenarthi\'s Roost (Leyawiin)"],
 			[10.0, 5.9, elsweyr, "Leyawiin (Cyrodiilic Empire)"],
 			[72.8, -49.4, reach, "The Reach"],
@@ -154,14 +154,15 @@
 			[75.8, 154.3, akaviri, "Tang Mo (NPC)"],
 			[72.7, 173.8, akaviri, "Po'Tun (NPC)"],
 			[78.3, 170.5, akaviri, "Kamal (NPC)"],
-			[69.3, -94.9, alinor, "Balfiera"],
+			[69.3, -94.9, alinor, "Balfiera (Aldmeri Hegemony)"],
 			[-20.0, 23.9, argonia, "Soulrest (Marshland Empire)"],
 			[-16.0, 51.2, argonia, "Lilmoth (Marshland Empire*)"],
 			[21.3, 51.7, argonia, "Helstrom (Marshland Empire)"],
 			[28.8, 38.0, argonia, "Stormhold (Marshland Empire)"],
 			[16.3, 19.8, argonia, "Murkmire (Marshland Empire)"],
-			[38.1, 54.8, morrowind, "Dres (Resdayn)"],
-			[47.7, 46.4, morrowind, "Hlaalu (Resdayn)"],
+			[38.1, 58.8, argonia, "East Dres (Marshland Empire)"],
+			[41.3, 35.1, velothi, "West Dres (County Velothia)"],
+			[47.7, 46.4, morrowind, "Demilitarized Zone"],
 			[56.9, 59.7, morrowind, "Indoril (Resdayn*)"],
 			[70.9, 67.1, morrowind, "Telvanni (Resdayn)"],
 			[72.4, 18.3, morrowind, "Redoran (Resdayn)"],
@@ -169,15 +170,13 @@
 			[68.4, 36.7, morrowind, "Hlaalu (Resdayn)"],
 			[83.7, -21.1, dragon, "Atmora (NPC)"],
 			[82.6, 45.7, dragon, "Roscrea"],
-			[80.4, 24.6, ind, "Skaal"],
-			[80.4, 16.5, ind, "Rieklings"],
+			[80.4, 24.6, ind, "Skaal (Velothia)"],
+			[80.4, 16.5, ind, "Rieklings (Velothia)"],
 			[63.3, 97.2, velothi, "Cathnoquey"],
 			[60.3, 107.4, sorc, "Yneslea"],
 			[64.4, 114.0, sorc, "Esroniet"],
-			[75.8, 31.9, velothi, "Urshilaku (Velothi Union)"],
+			[73.9, 39.9, velothi, "County Velothia (Cyrodiilic Empire)"],
 			[67.6, 52.4, velothi, "Erabenimsun"],
-			[73.0, 46.2, velothi, "Zainab (Velothi Union)"],
-			[75.0, 44.5, velothi, "Ahemmusa (Velothi Union)"],
 			[-11.0, -64.0, boiche, "Wasten"]
 			
 			]
@@ -196,10 +195,10 @@
 		
 		/*Marker Placements*/
 		
-		L.marker([12.7, -83.6], {icon: alinor}).bindPopup('Auridon (Summerset Isles)').addTo(map);
-		L.marker([-5.9, -105.9], {icon: alinor}).bindPopup('Alinor (Summerset Isles*)').addTo(map);
-		L.marker([15.2, -101.7], {icon: alinor}).bindPopup('Cloudrest (Summerset Isles)').addTo(map);
-		L.marker([-7.2, -91.8], {icon: alinor}).bindPopup('Dusk (Summerset Isles)').addTo(map);
+		L.marker([12.7, -83.6], {icon: alinor}).bindPopup('Auridon (Aldmeri Hegemony)').addTo(map);
+		L.marker([-5.9, -105.9], {icon: alinor}).bindPopup('Alinor (Aldmeri Hegemony*)').addTo(map);
+		L.marker([15.2, -101.7], {icon: alinor}).bindPopup('Cloudrest (Aldmeri Hegemony)').addTo(map);
+		L.marker([-7.2, -91.8], {icon: alinor}).bindPopup('Dusk (Aldmeri Hegemony)').addTo(map);
 		
 		L.marker([41.7, -119.3], {icon: hammerfell}).bindPopup('The Isles (Stros M\'Kai)').addTo(map);
 		L.marker([41.2, -99.4], {icon: hammerfell}).bindPopup('Stros M\'Kai').addTo(map);
@@ -221,8 +220,8 @@
 		L.marker([66.2, -74.1], {icon: hammerfell}).bindPopup('Hallin\'s Stand').addTo(map);
 		L.marker([66.7, -57.4], {icon: hammerfell}).bindPopup('Dragonstar').addTo(map);
 		
-		L.marker([59.2, -117.6], {icon: orcs}).bindPopup('Betnikh (Orsinium)').addTo(map);
-		L.marker([75.5, -63.3], {icon: orcs}).bindPopup('Wrothgar (Orsinium*)').addTo(map);
+		L.marker([59.2, -117.6], {icon: breton}).bindPopup('Betony (Stormhaven)').addTo(map);
+		L.marker([75.5, -63.3], {icon: orcs}).bindPopup('Wrothgar').addTo(map);
 		
 		L.marker([63.8, -115.0], {icon: breton}).bindPopup('Daggerfall').addTo(map);
 		L.marker([70.2, -111.7], {icon: breton}).bindPopup('Camlorn (Kingdom of Alcaire)').addTo(map);
@@ -230,8 +229,7 @@
 		L.marker([74.7, -96.3], {icon: breton}).bindPopup('Rivenspire').addTo(map);
 		L.marker([76.8, -87.2], {icon: breton}).bindPopup('Northpoint').addTo(map);
 		L.marker([70.5, -83.8], {icon: breton}).bindPopup('Stormhaven').addTo(map);
-		L.marker([71.9, -72.6], {icon: breton}).bindPopup('Evermor').addTo(map);
-		L.marker([74.0, -73.5], {icon: breton}).bindPopup('Morkul').addTo(map);
+		L.marker([73.0, -73.4], {icon: breton}).bindPopup('Evermor').addTo(map);
 		
 		L.marker([78.4, -43.9], {icon: skyrim}).bindPopup('Haafingar (Kingdom of Skyrim)').addTo(map);
 		L.marker([76.7, -18.8], {icon: skyrim}).bindPopup('The Pale (Kingdom of Skyrim)').addTo(map);
