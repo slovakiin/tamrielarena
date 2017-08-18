@@ -131,12 +131,12 @@
 		/* reference http://harrywood.co.uk/maps/examples/leaflet/marker-array.view.html */
 		var markers = [
 			//[Lat, Long, icon, 'popup']
-			[16.1, -47.9, falinesti, "+Summer Falinesti (The Wild Empire*)"],
-			[27.4, -42.9, boiche, "Arenthia (The Wild Empire)"],
-			[3.6, -63.6, boiche, "Wilder Court (The Wild Empire)"],
-			[4.5, -37.7, boiche, "Elden Root (The Wild Empire)"],
-			[-10.0, -33.1, falinesti, "+Winter Falinesti (The Wild Empire*)"],
-			[-20.2, -18.5, elsweyr, "+Khenarthi\'s Roost (The Kingdom of Nibenay)"],
+			[16.1, -47.9, falinesti, "+Summer Falinesti (Valenwood*)"],
+			[27.4, -42.9, boiche, "Arenthia (Valenwood)"],
+			[3.6, -63.6, boiche, "Wilder Court (Valenwood)"],
+			[4.5, -37.7, boiche, "Elden Root (Valenwood)"],
+			[-10.0, -33.1, falinesti, "+Winter Falinesti (Valenwood*)"],
+			[-20.2, -18.5, elsweyr, "Khenarthi\'s Roost (Leyawiin)"],
 			[72.8, -49.4, reach, "+The Reach"],
 			[-42.5, -56.4, maormer, "Pyandonea"],
 			[69.3, -94.9, alinor, "Balfiera (Aldmeri Hegemony)"],
@@ -146,16 +146,15 @@
 			[28.8, 38.0, argonia, "Stormhold"],
 			[16.3, 19.8, argonia, "Murkmire"],
 			[38.1, 58.8, argonia, "Tear"],
-			[41.3, 35.1, velothi, "Dun-Ahhe Administration"],
-			[47.7, 46.4, morrowind, "Demilitarized Zone"],
-			[56.9, 59.7, morrowind, "Indoril (Resdayn*)"],
-			[70.9, 67.1, morrowind, "Telvanni (Resdayn)"],
-			[72.4, 18.3, morrowind, "Redoran (Resdayn)"],
-			[60.7, 23.5, morrowind, "+Sadras (Resdayn)"],
-			[68.4, 36.7, morrowind, "Hlaalu (Resdayn)"],
-			[73.3, 41.4, morrowind, "House Dagoth"],
+			[41.3, 35.1, morrowind, "Dun-Ahhe"],
+			[56.9, 59.7, morrowind, "+Indoril"],
+			[70.9, 67.1, morrowind, "Telvanni"],
+			[72.4, 18.3, morrowind, "Redoran"],
+			[60.7, 23.5, morrowind, "Sadras"],
+			[68.4, 36.7, morrowind, "Hlaalu"],
+			[73.3, 41.4, morrowind, "Dagoth"],
 			[82.6, 45.7, dragon, "+Roscrea"],
-			[81.1, 18.1, ind, "+Rieklings"],
+			[81.1, 18.1, ind, "Rieklings"],
 			[80.4, 23.3, ind, "Skaal (Echmeri Protectorate)"],
 			[59.1, 115.1, sorc, "Cathnoquey"],
 			[54.9, 133.4, sorc, "+Yneslea (Echmeri Protectorate*)"],
@@ -185,8 +184,8 @@
 		L.marker([41.7, -119.3], {icon: alinor}).bindPopup('Abecean Colonies (Aldmeri Hegemony)').addTo(map);
 		
 		L.marker([52.6, -60.2], {icon: hammerfell}).bindPopup('Rihad').addTo(map);
-		L.marker([61.3, -92.4], {icon: hammerfell}).bindPopup('+Sentinel').addTo(map);
-		L.marker([53.6, -102.6], {icon: hammerfell}).bindPopup('Hegathe').addTo(map);
+		L.marker([61.3, -92.4], {icon: hammerfell}).bindPopup('Sentinel').addTo(map);
+		L.marker([53.6, -102.6], {icon: hammerfell}).bindPopup('+Hegathe').addTo(map);
 		L.marker([41.2, -99.4], {icon: hammerfell}).bindPopup('Stros M\'Kai').addTo(map);
 		L.marker([65.0, -42.5], {icon: velothi}).bindPopup('+Freehold of Ashu-Ahhe').addTo(map);	
 		L.marker([62.0, -65.7], {icon: hammerfell}).bindPopup('Mournoth').addTo(map);
@@ -210,15 +209,15 @@
 		L.marker([34.5, -146.9], {icon: sorc}).bindPopup('Coral Kingdom (Sloads)').addTo(map);
 		L.marker([31.4, -110.6], {icon: sorc}).bindPopup('Eyevea').addTo(map);
 
-		L.marker([74.5, -64.6], {icon: orcs}).bindPopup('Trinium').addTo(map);
-		L.marker([77.8, -61.9], {icon: orcs}).bindPopup('Wrothgar').addTo(map);
+		L.marker([75.5, -62.2], {icon: orcs}).bindPopup('Trinium').addTo(map);
+		L.marker([77.6, -60.0], {icon: orcs}).bindPopup('Wrothgar').addTo(map);
 		L.marker([63.8, -115.0], {icon: breton}).bindPopup('Daggerfall').addTo(map);
 		L.marker([70.2, -111.7], {icon: breton}).bindPopup('Camlorn (Kingdom of Alcaire)').addTo(map);
 		L.marker([72.3, -94.5], {icon: breton}).bindPopup('+Alcaire (Kingdom of Alcaire*)').addTo(map);
-		L.marker([74.7, -96.3], {icon: breton}).bindPopup('+Rivenspire').addTo(map);
-		L.marker([76.8, -87.2], {icon: breton}).bindPopup('Northpoint').addTo(map);
+		L.marker([74.7, -96.3], {icon: breton}).bindPopup('+Rivenspire (Kingdom of High Rock)').addTo(map);
+		L.marker([76.8, -87.2], {icon: breton}).bindPopup('Northpoint (Kingdom of High Rock)').addTo(map);
 		L.marker([73.0, -73.4], {icon: breton}).bindPopup('Evermor').addTo(map);
-		L.marker([70.5, -83.8], {icon: breton}).bindPopup('+Stormhaven (Kingdom of Stormhaven*)').addTo(map);
+		L.marker([70.5, -83.8], {icon: breton}).bindPopup('+Stormhaven (Kingdom of High Rock)').addTo(map);
 		L.marker([59.2, -117.6], {icon: breton}).bindPopup('Betony (Kingdom of Stormhaven)').addTo(map);
 		L.marker([17.4, -18.9], {icon: breton}).bindPopup('+Valleguard (Kingdom of Stormhaven)').addTo(map);
 	        L.marker([24.6, -13.4], {icon: breton}).bindPopup('+Alkarth (Kingdom of Stormhaven)').addTo(map);
@@ -235,8 +234,8 @@
 		L.marker([65.5, -.83], {icon: ind}).bindPopup('Avanchnzel & Falmer').addTo(map);
 		L.marker([75.0, -79.1], {icon: ind}).bindPopup('Ravenspring (Avanchnzel)').addTo(map);
 
-		L.marker([28.5, -24.9], {icon:boiche}).bindPopup('Vinedusk (The Wild Empire)').addTo(map);
-		L.marker([7.0, -14.2], {icon:boiche}).bindPopup('Tenmar (The Wild Empire)').addTo(map);
+		L.marker([28.5, -24.9], {icon:boiche}).bindPopup('Vinedusk (Valenwood)').addTo(map);
+		L.marker([7.0, -14.2], {icon:boiche}).bindPopup('Tenmar (Valenwood)').addTo(map);
 		L.marker([73.6, 27.9], {icon: sorc}).bindPopup('+Bthanchend (Echmeri Protectorate)').addTo(map);
 		L.marker([8.1, 66.8], {icon: sorc}).bindPopup('Pademeic (Echmeri Protectorate)').addTo(map);
     </script>
