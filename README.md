@@ -1,2 +1,2 @@
-# nirnpowers.github.io
+# tamrielarena.github.io
 Test Leaflet website
