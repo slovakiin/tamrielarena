@@ -1,4 +1,4 @@
-Overview
+﻿Overview
 The map is not a single picture.
 It is made up of two layers: map tiles, and markers.
 The javascript program (API) used to create the map is called Leaflet
@@ -17,7 +17,7 @@ Make sure to keep the photo square
 Generating Tiles
 http://blog.mikecouturier.com/2011/07/create-zoomable-images-using-google.html
 Shift+RightClick and select ¡°Open Command Window Here¡± to call command prompt
-Command you type in should look like TilesGenerator.exe 5 EmpireMap0.png
+Command you type in should look like TilesGenerator.exe 5 nations_map.png
 	Will take a few minutes to generate tiles
 
 
