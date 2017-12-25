@@ -44,7 +44,14 @@
 			tms: false,
 			noWrap: true,
         });
-		
+		var terrain = L.tileLayer('output_terrain/tile_{z}_{x}-{y}.png', {
+			minZoom: 1,
+			maxZoom: 5,
+			attribution: 'Tamriel Arena Terrain Map',
+			tms: false,
+			noWrap: true,
+        });
+	    
 		var baseMaps = {
 			"Nations": nations,
 		};
