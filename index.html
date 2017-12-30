@@ -51,11 +51,23 @@
 			attribution: 'Tamriel Arena Map',
 			tms: false,
 			noWrap: true,
-        });
+         });
+	    
+	        var grid = L.tileLayer('output_grid/tile_{z}_{x}-{y}.png', {
+			minZoom: 1,
+			maxZoom: 5,
+			attribution: 'Tamriel Arena Map',
+			tms: false,
+			noWrap: true,
+         });
 	    
 		var baseMaps = {
 			"Terrain": terrain,
 			"Nations": nations,
+		};
+	    
+	        var overlayMaps = {
+			"Grid": grid,
 		};
 	
 		/* MAP */
@@ -66,7 +78,7 @@
 		});
 	
 		/* This adds a layer control to the top right */
-		L.control.layers(baseMaps).addTo(map);
+		L.control.layers(baseMaps, overlayMaps).addTo(map);
 		
 		var info = L.control();
 
