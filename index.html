@@ -134,7 +134,7 @@
 			niben = new npIcon({iconUrl: 'icons/nibenay.png'})
 			colovia = new npIcon({iconUrl: 'icons/colovia.png'})
 			ayleid = new npIcon({iconUrl: 'icons/ayleid.png'})
-			falinesti = new npIcon({iconUrl: 'icons/falinesti.png'})
+			graht = new npIcon({iconUrl: 'icons/falinesti.png'})
 			boiche = new npIcon({iconUrl: 'icons/boiche.png'})
 			elsweyr = new npIcon({iconUrl: 'icons/elsweyr.png'})
 			reach = new npIcon({iconUrl: 'icons/reach.png'})
@@ -152,12 +152,12 @@
 		/* reference http://harrywood.co.uk/maps/examples/leaflet/marker-array.view.html */
 		var markers = [
 			//[Lat, Long, icon, 'popup']
-			[17.3, -56.8, falinesti, "Falinesti"],
-			[23.8, -40.4, boiche, "Arenthia (The Empire of Cyrodiil)"],
+			[17.3, -56.8, graht, "Falinesti (Valenwood*)"],
+			[23.8, -40.4, boiche, "Arenthia (Valenwood)"],
 			[1.2, -56.6, boiche, "Greenheart"],
-			[4.5, -37.7, boiche, "Elden Root (The Empire of Cyrodiil)"],
+			[4.5, -37.7, graht, "Elden Root (Valenwood)"],
 			[-6.7, -32.8, boiche, "Haven"],
-			[13.7, -43.4, boiche, "Silvenar"],
+			[13.7, -43.4, boiche, "Silvenar (Valenwood)"],
 			
 			[-42.5, -56.4, maormer, "Pyandonea"],
 			[69.3, -94.9, breton, "Balfiera (Adamantine Union*)"],
@@ -181,7 +181,7 @@
 			[82.0, 45.5, dragon, "Roscrea (Solitude)"],
 			[56.3, 62.0, morrowind, "Indoril (Resdayn)"],
 			[80.8, 21.8, ind, "Skaal"],
-			[79.8, 19.0, imperial, "Raven Rock"],
+			[79.8, 19.0, morrowind, "Raven Rock (Resdayn)"],
 			[59.1, 115.1, sorc, "Cathnoquey"],
 			[54.9, 133.4, sorc, "Yneslea"],
 			[62.0, 149.4, sorc, "Esroniet"]
@@ -221,11 +221,11 @@
 		L.marker([64.0, -42.6], {icon: hammerfell}).bindPopup('Elinhir').addTo(map);
 	
 		L.marker([50.4, -7.7], {icon: imperial}).bindPopup('Imperial City (The Empire of Cyrodiil*)').addTo(map);	
-		L.marker([54.2, -26.0], {icon:colovia}).bindPopup('Chorrol (The Empire of Cyrodiil)').addTo(map);
+		L.marker([54.2, -26.0], {icon:niben}).bindPopup('Chorrol (The Empire of Cyrodiil)').addTo(map);
 		L.marker([62.3, -6.7], {icon:niben}).bindPopup('Bruma (The Empire of Cyrodiil)').addTo(map);
-		L.marker([38.4, -55.8], {icon:colovia}).bindPopup('Anvil (The Empire of Cyrodiil)').addTo(map);
-		L.marker([43.0, -42.4], {icon:colovia}).bindPopup('Kvatch (The Empire of Cyrodiil)').addTo(map);	
-		L.marker([40.5, -19.5], {icon:colovia}).bindPopup('Skingrad (The Empire of Cyrodiil)').addTo(map);
+		L.marker([38.4, -55.8], {icon:niben}).bindPopup('Anvil (The Empire of Cyrodiil)').addTo(map);
+		L.marker([43.0, -42.4], {icon:niben}).bindPopup('Kvatch (The Empire of Cyrodiil)').addTo(map);	
+		L.marker([40.5, -19.5], {icon:niben}).bindPopup('Skingrad (The Empire of Cyrodiil)').addTo(map);
 		L.marker([55.1, 12.1], {icon:niben}).bindPopup('Cheydinhal (The Empire of Cyrodiil)').addTo(map);
 		L.marker([33.0, 12.8], {icon:niben}).bindPopup('Bravil (The Empire of Cyrodiil)').addTo(map);
 		L.marker([14.1, 7.0], {icon:niben}).bindPopup('Leyawiin (The Empire of Cyrodiil)').addTo(map);
@@ -250,7 +250,7 @@
 		L.marker([17.4, -18.9], {icon: elsweyr}).bindPopup('Orcrest (Anequina)').addTo(map);
 		L.marker([25.7, -25.2], {icon:elsweyr}).bindPopup('Dune (Anequina*)').addTo(map);
 		L.marker([6.1, -8.3], {icon: elsweyr}).bindPopup('Corinthe (Pelletine)').addTo(map);
-		L.marker([22.0, -9.4], {icon: elsweyr}).bindPopup('Rimmen (The Empire of Cyrodiil)').addTo(map);
+		L.marker([22.0, -9.4], {icon: niben}).bindPopup('Rimmen (The Empire of Cyrodiil)').addTo(map);
 	        L.marker([-13.1, -6.7], {icon: elsweyr}).bindPopup('Senchal (Pelletine)').addTo(map);
 	    
 		L.marker([78.4, -43.9], {icon: skyrim}).bindPopup('Solitude (Kingdom of Skyrim*)').addTo(map);
@@ -258,7 +258,7 @@
 		L.marker([77.2, -4.2], {icon: skyrim}).bindPopup('Winterhold').addTo(map);
 		L.marker([73.6, -1.1], {icon: skyrim}).bindPopup('Eastmarch').addTo(map);
 		L.marker([67.1, 1.5], {icon: skyrim}).bindPopup('The Rift').addTo(map);
-		L.marker([72.4, -20.0], {icon: skyrim}).bindPopup('Whiterun').addTo(map);
+		L.marker([72.4, -20.0], {icon: dragon}).bindPopup('Whiterun').addTo(map);
 		L.marker([69.4, -34.2], {icon: skyrim}).bindPopup('Falkreath (Kingdom of Skyrim)').addTo(map);
 	        L.marker([73.7, -50.3], {icon: skyrim}).bindPopup('The Reach (Kingdom of Skyrim)').addTo(map);
     </script>
