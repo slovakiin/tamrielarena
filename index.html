@@ -127,9 +127,11 @@
 			hammerfell = new npIcon ({iconUrl: 'icons/hammerfell.png'})
 			imperial = new npIcon({iconUrl: 'icons/imperialcity.png'})
 			ind = new npIcon({iconUrl: 'icons/tribe.png'})
+	    		altmer = new npIcon({iconUrl: 'icons/altmer2.png'})
 			sorc = new npIcon({iconUrl: 'icons/sorcerers.png'})
 			orcs = new npIcon({iconUrl: 'icons/orcs.png'})
 			breton = new npIcon({iconUrl: 'icons/breton.png'})
+			breton2 = new npIcon({iconUrl: 'icons/breton2.png'})
 			skyrim = new npIcon({iconUrl: 'icons/bear.png'})
 			niben = new npIcon({iconUrl: 'icons/nibenay.png'})
 			colovia = new npIcon({iconUrl: 'icons/colovia.png'})
@@ -205,16 +207,14 @@
 		
 		L.marker([6.3, -83.6], {icon: alinor}).bindPopup('Skywatch (Summerset Isles)').addTo(map);
 		L.marker([-5.3, -110.0], {icon: alinor}).bindPopup('Alinor (Summerset Isles*)').addTo(map);
-		L.marker([18.2, -94.2], {icon: alinor}).bindPopup('Cloudrest (Independent)').addTo(map);
+		L.marker([18.2, -94.2], {icon: altmer}).bindPopup('Cloudrest (Independent)').addTo(map);
 	        L.marker([1.3, -94.0], {icon: alinor}).bindPopup('Shimmerene (Summerset Isles)').addTo(map);
 	        L.marker([-9.0, -101.6], {icon: alinor}).bindPopup('Sunhold (Summerset Isles)').addTo(map);
 	        L.marker([11.3, -112.4], {icon: alinor}).bindPopup('Lillandril (Summerset Isles)').addTo(map);
 		L.marker([-13.0, -89.5], {icon: alinor}).bindPopup('Dusk (Summerset Isles)').addTo(map);
-		L.marker([-10.0, -64.5], {icon: alinor}).bindPopup('Colony of Wasten (Dusk)').addTo(map);
+		L.marker([-10.0, -64.5], {icon: boiche}).bindPopup('Wasten').addTo(map);
 	    
-		L.marker([42.3, -110.9], {icon: hammerfell}).bindPopup('The Chain').addTo(map);
     		L.marker([38.5, -99.4], {icon: hammerfell}).bindPopup('Abecean Isles').addTo(map);
-	        L.marker([49.2, -122.0], {icon: hammerfell}).bindPopup('Outer Isles').addTo(map);
 		L.marker([51.4, -51.7], {icon: hammerfell}).bindPopup('Rihad').addTo(map);
 	        L.marker([56.8, -69.8], {icon: hammerfell}).bindPopup('Taneth').addTo(map);
 		L.marker([61.3, -92.4], {icon: hammerfell}).bindPopup('Sentinel').addTo(map);
@@ -226,7 +226,7 @@
 		L.marker([49.3, 1.3], {icon: imperial}).bindPopup('Imperial City and the Eastern Heartland (The Empire of Cyrodiil*)').addTo(map);	
 		L.marker([54.2, -26.0], {icon:niben}).bindPopup('Chorrol (The Empire of Cyrodiil)').addTo(map);
 		L.marker([61.3, -3.7], {icon:niben}).bindPopup('Bruma (The Empire of Cyrodiil)').addTo(map);
-		L.marker([38.4, -55.8], {icon:alinor}).bindPopup('Anvil (Summerset Isles)').addTo(map);
+		L.marker([38.4, -55.8], {icon:altmer}).bindPopup('Anvil (Cloudrest)').addTo(map);
 		L.marker([43.0, -42.4], {icon:niben}).bindPopup('Kvatch (The Empire of Cyrodiil)').addTo(map);	
 		L.marker([40.5, -19.5], {icon:niben}).bindPopup('Skingrad (The Empire of Cyrodiil)').addTo(map);
 		L.marker([55.9, 14.4], {icon:morrowind}).bindPopup('Dark Corridor (Resdayn)').addTo(map);
@@ -245,7 +245,7 @@
 		L.marker([74.4, -101.0], {icon: breton}).bindPopup('Shornhelm (Adamantine Union)').addTo(map);
 		L.marker([76.8, -87.2], {icon: breton}).bindPopup('Northpoint (Adamantine Union)').addTo(map);
 		L.marker([71.6, -68.6], {icon: breton}).bindPopup('Evermore (Adamantine Union)').addTo(map);
-		L.marker([70.7, -86.6], {icon: breton}).bindPopup('Wayrest (Adamantine Union)').addTo(map);
+		L.marker([70.7, -86.6], {icon: breton2}).bindPopup('Wayrest').addTo(map);
 	      
 		L.marker([-2.7, -17.7], {icon: elsweyr}).bindPopup('Torval (Pelletine*)').addTo(map);
 		L.marker([31.5, -20.5], {icon: elsweyr}).bindPopup('Riverhold (Anequina)').addTo(map);
@@ -256,14 +256,13 @@
 	        L.marker([-13.1, -6.7], {icon: elsweyr}).bindPopup('Senchal (Pelletine)').addTo(map);
 	    	L.marker([-20.2, -17.6], {icon: morrowind}).bindPopup('Mistral (Tribunal Temple)').addTo(map);
 	    
-		L.marker([78.4, -43.9], {icon: skyrim}).bindPopup('Solitude (Kingdom of Skyrim*)').addTo(map);
-		L.marker([76.7, -18.8], {icon: skyrim}).bindPopup('Dawnstar').addTo(map);
+		L.marker([77.7, -26.5], {icon: skyrim}).bindPopup('Solitude (Kingdom of Skyrim*)').addTo(map);
 		L.marker([77.2, -4.2], {icon: skyrim}).bindPopup('Winterhold').addTo(map);
 		L.marker([73.6, -1.1], {icon: skyrim}).bindPopup('Eastmarch').addTo(map);
 		L.marker([67.1, 1.5], {icon: skyrim}).bindPopup('The Rift').addTo(map);
-		L.marker([72.4, -20.0], {icon: dragon}).bindPopup('Whiterun').addTo(map);
-		L.marker([69.4, -34.2], {icon: skyrim}).bindPopup('Falkreath (Kingdom of Skyrim)').addTo(map);
-	        L.marker([73.7, -50.3], {icon: skyrim}).bindPopup('The Reach (Kingdom of Skyrim)').addTo(map);
+		L.marker([72.4, -20.0], {icon: skyrim}).bindPopup('Whiterun (Kingdom of Skyrim)').addTo(map);
+		L.marker([69.6, -34.2], {icon: skyrim}).bindPopup('Falkreath').addTo(map);
+	        L.marker([74.4, -50.3], {icon: breton}).bindPopup('Markarth (Adamantine Union)').addTo(map);
     </script>
 </body>
 </html>
